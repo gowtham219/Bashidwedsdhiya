@@ -12,7 +12,7 @@ setTimeout(() => {
       app.style.opacity = "1";
     });
 
-  }, 3500);
+  }, 1500);
 
 }, 4500);
 

@@ -12,9 +12,9 @@ setTimeout(() => {
       app.style.opacity = "1";
     });
 
-  }, 3000);
+  }, 3500);
 
-}, 3500);
+}, 4500);
 
 
 // HEART

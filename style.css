@@ -1,0 +1,543 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Playfair Display', serif;
+}
+
+body{
+  overflow-x:hidden;
+  background: radial-gradient(circle at top, #120d14 0%, #070509 60%, #040305 100%);
+  color:white;
+}
+
+/* ✨ BACKGROUND LIGHT ORBS */
+body::before,
+body::after{
+  content:"";
+  position:fixed;
+  width:500px;
+  height:500px;
+  border-radius:50%;
+  filter:blur(120px);
+  opacity:0.25;
+  z-index:0;
+}
+
+body::before{
+  background:#c8a45d;
+  top:-100px;
+  left:-120px;
+}
+
+body::after{
+  background:#ff4d8d;
+  bottom:-150px;
+  right:-120px;
+}
+
+/* INTRO */
+#intro{
+  position:fixed;
+  inset:0;
+  background: radial-gradient(circle at center, #0b0710 0%, #000 100%);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:100;
+}
+
+#heartCanvas{
+  position:absolute;
+  inset:0;
+  opacity:0.8;
+}
+
+.introText{
+  text-align:center;
+  z-index:2;
+}
+
+.introText h1{
+  font-family:"Great Vibes";
+  font-size:84px;
+  color:#ffd27d;
+  text-shadow:
+    0 0 20px rgba(255,210,125,0.6),
+    0 0 60px rgba(255,210,125,0.3);
+  animation: glow 2s infinite alternate;
+}
+
+.introText p{
+  color:#aaa;
+  letter-spacing:3px;
+  margin-top:10px;
+}
+
+@keyframes glow{
+  from{ text-shadow:0 0 10px rgba(255,210,125,0.3); }
+  to{ text-shadow:0 0 30px rgba(255,210,125,0.8); }
+}
+
+/* APP */
+#app{
+  display:none;
+  opacity:0;
+  transition:1.5s ease;
+  position:relative;
+  z-index:2;
+}
+
+/* WRAPPER */
+.invitationWrapper{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px;
+}
+
+/* CARD (GLASS + GLOW) */
+.inviteCard{
+  width:100%;
+  max-width:560px;
+
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  padding:60px 40px;
+  text-align:center;
+  border-radius:28px;
+
+  border:1px solid rgba(255,255,255,0.12);
+
+  box-shadow:
+    0 0 60px rgba(255,210,125,0.08),
+    0 0 120px rgba(255,77,141,0.05);
+
+  position:relative;
+  overflow:hidden;
+}
+
+/* animated shine */
+.inviteCard::before{
+  content:"";
+  position:absolute;
+  top:-50%;
+  left:-50%;
+  width:200%;
+  height:200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255,210,125,0.08),
+    transparent
+  );
+  transform:rotate(25deg);
+  animation: shine 6s infinite linear;
+}
+
+@keyframes shine{
+  0%{ transform:translateX(-30%) rotate(25deg); }
+  100%{ transform:translateX(30%) rotate(25deg); }
+}
+
+/* NAME */
+.coupleName br{
+  line-height: 1.8;
+}
+
+/* ITALIC PREMIUM NAMES */
+.nameItalic{
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-weight:600;
+  letter-spacing:1px;
+}
+
+.wedsText{
+  font-family: 'Inter', sans-serif;
+  font-size:14px;
+  letter-spacing:8px;
+  text-transform:uppercase;
+  color:#ffffff;
+  opacity:0.9;
+
+  display:inline-block;
+  margin:12px 0;
+  position:relative;
+}
+
+.wedsText::before,
+.wedsText::after{
+  content:"";
+  width:50px;
+  height:1px;
+  background:rgba(255,210,125,0.5);
+  display:inline-block;
+  vertical-align:middle;
+  margin:0 12px;
+}
+
+/* SUB */
+.subText{
+  color:#bbb;
+  margin-top:8px;
+  letter-spacing:2px;
+}
+
+/* DIVIDER */
+.divider{
+  width:120px;
+  height:1px;
+  margin:25px auto;
+  background: linear-gradient(90deg, transparent, #ffd27d, transparent);
+}
+
+/* DATE */
+.dateText{
+  font-size:18px;
+  color:#fff;
+  margin-top:10px;
+  font-weight:500;
+}
+
+.locationText{
+  font-size:14px;
+  color:#bbb;
+  margin-top:6px;
+}
+
+/* VIEW LOCATION BUTTON */
+.viewLocationBtn{
+  display:inline-block;
+  margin-top:16px;
+  padding:10px 28px;
+  font-family:'Inter', sans-serif;
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#ffd27d;
+  text-decoration:none;
+  border:1px solid rgba(255,210,125,0.4);
+  border-radius:30px;
+  background: rgba(255,210,125,0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(255,210,125,0.08);
+}
+
+.viewLocationBtn:hover{
+  background: rgba(255,210,125,0.18);
+  box-shadow: 0 0 30px rgba(255,210,125,0.25);
+  transform: translateY(-2px);
+}
+
+/* FLORAL */
+.floral{
+  width:160px;
+  height:22px;
+  margin:30px auto;
+  background: radial-gradient(circle, #ffd27d 2px, transparent 3px);
+  background-size:14px 14px;
+  opacity:0.8;
+}
+
+/* COUNTDOWN (VERY IMPORTANT VISUAL UPGRADE) */
+.countdownBox{
+  display:flex;
+  justify-content:space-between;
+  margin-top:20px;
+  padding:20px;
+  border-radius:18px;
+
+  background: rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.4);
+}
+
+.countdownBox div{
+  flex:1;
+}
+
+.countdownBox h2{
+  font-size:32px;
+  color:#ffd27d;
+  text-shadow:0 0 15px rgba(255,210,125,0.4);
+}
+
+.countdownBox span{
+  font-size:11px;
+  color:#aaa;
+  letter-spacing:2px;
+}
+
+/* FOOTER */
+.footerText{
+  margin-top:25px;
+  font-size:13px;
+  color:#bbb;
+  letter-spacing:1px;
+}
+
+/* FLOATING PETALS & HEARTS */
+#floatingElements{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:70;
+  overflow:hidden;
+}
+
+.floatItem{
+  position:absolute;
+  top:-40px;
+  font-size:18px;
+  opacity:0.7;
+  animation: floatDown linear infinite;
+  filter: drop-shadow(0 0 6px rgba(255,210,125,0.4));
+}
+
+@keyframes floatDown{
+  0%{
+    transform: translateY(-10vh) translateX(0) rotate(0deg);
+    opacity:0;
+  }
+  10%{ opacity:0.8; }
+  90%{ opacity:0.6; }
+  100%{
+    transform: translateY(110vh) translateX(40px) rotate(360deg);
+    opacity:0;
+  }
+}
+
+/* RSVP */
+.rsvpSection{
+  margin-top:10px;
+}
+
+.rsvpHeading{
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-weight:600;
+  font-size:22px;
+  color:#ffd27d;
+  letter-spacing:1px;
+  margin-bottom:18px;
+  text-shadow:0 0 12px rgba(255,210,125,0.3);
+}
+
+.rsvpButtons{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  align-items:center;
+}
+
+.rsvpBtn{
+  font-family:'Inter', sans-serif;
+  font-size:13px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  padding:12px 30px;
+  border-radius:30px;
+  cursor:pointer;
+  transition: all 0.3s ease;
+  width:100%;
+  max-width:320px;
+  position:relative;
+  z-index:80;
+  pointer-events:auto;
+}
+
+.rsvpYes{
+  background: linear-gradient(135deg, rgba(255,210,125,0.25), rgba(255,210,125,0.08));
+  border:1px solid rgba(255,210,125,0.5);
+  color:#ffd27d;
+  box-shadow: 0 0 25px rgba(255,210,125,0.15);
+}
+
+.rsvpYes:hover{
+  background: linear-gradient(135deg, rgba(255,210,125,0.4), rgba(255,210,125,0.15));
+  box-shadow: 0 0 35px rgba(255,210,125,0.3);
+  transform: translateY(-2px);
+}
+
+.rsvpNo{
+  background: rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.15);
+  color:#bbb;
+}
+
+.rsvpNo:hover{
+  background: rgba(255,255,255,0.08);
+  color:#ddd;
+  transform: translateY(-2px);
+}
+
+/* CELEBRATION POPUP */
+.celebrationOverlay{
+  position:fixed;
+  inset:0;
+  background: rgba(4,3,5,0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:200;
+  opacity:0;
+  transition: opacity 0.4s ease;
+}
+
+.celebrationOverlay.show{
+  display:flex;
+  opacity:1;
+}
+
+#confettiCanvas{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+}
+
+.celebrationCard{
+  position:relative;
+  z-index:2;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border:1px solid rgba(255,210,125,0.25);
+  border-radius:24px;
+  padding:50px 35px;
+  max-width:380px;
+  text-align:center;
+  box-shadow:
+    0 0 60px rgba(255,210,125,0.15),
+    0 0 120px rgba(255,77,141,0.08);
+  transform: scale(0.85);
+  transition: transform 0.4s ease;
+}
+
+.celebrationOverlay.show .celebrationCard{
+  transform: scale(1);
+}
+
+.celebrationIcon{
+  font-size:56px;
+  margin-bottom:10px;
+  animation: bounceIcon 1.2s ease infinite alternate;
+}
+
+@keyframes bounceIcon{
+  from{ transform: translateY(0); }
+  to{ transform: translateY(-10px); }
+}
+
+.celebrationCard h2{
+  font-family:'Great Vibes';
+  font-size:42px;
+  color:#ffd27d;
+  margin:10px 0;
+  text-shadow:0 0 20px rgba(255,210,125,0.5);
+}
+
+.celebrationCard p{
+  font-family:'Cormorant Garamond', serif;
+  font-size:17px;
+  color:#ddd;
+  line-height:1.6;
+  margin-bottom:25px;
+}
+
+.closeCelebration{
+  font-family:'Inter', sans-serif;
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  padding:10px 32px;
+  border-radius:30px;
+  border:1px solid rgba(255,210,125,0.4);
+  background: rgba(255,210,125,0.1);
+  color:#ffd27d;
+  cursor:pointer;
+  transition: all 0.3s ease;
+}
+
+.closeCelebration:hover{
+  background: rgba(255,210,125,0.22);
+  box-shadow: 0 0 25px rgba(255,210,125,0.25);
+}
+
+/* MOBILE */
+@media(max-width:600px){
+.coupleName{
+  font-family: 'Playfair Display', serif; /* clearer + premium readable */
+  font-size:56px;
+  font-weight:600;
+  color:#ffd27d;
+  text-shadow:
+    0 0 18px rgba(255,210,125,0.35);
+  line-height:1.4;
+  letter-spacing:0.5px;
+}
+
+.nameItalic{
+  font-size:50px;
+  display:inline-block;
+}
+
+.wedsText{
+  display:inline-block;
+  margin:10px 0;
+  font-size:18px;
+  letter-spacing:6px;
+  color:#ffffff;
+  text-transform:uppercase;
+
+  opacity:0.85;
+
+  position:relative;
+}
+
+/* decorative small line */
+.wedsText::before,
+.wedsText::after{
+  content:"";
+  display:inline-block;
+  width:40px;
+  height:1px;
+  background:rgba(255,210,125,0.6);
+  vertical-align:middle;
+  margin:0 10px;
+}
+
+  .introText h1{
+    font-size:62px;
+  }
+
+  .inviteCard{
+    padding:40px 22px;
+  }
+
+  .viewLocationBtn{
+    font-size:11px;
+    padding:9px 22px;
+  }
+
+  .rsvpBtn{
+    font-size:12px;
+    padding:12px 20px;
+  }
+
+  .celebrationCard{
+    padding:40px 24px;
+  }
+
+  .celebrationCard h2{
+    font-size:36px;
+  }
+}

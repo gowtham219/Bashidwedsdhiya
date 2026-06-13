@@ -37,7 +37,7 @@ try {
 
     }, 900);
 
-  }, 2500);
+  }, 4500);
 } catch(e) { console.error("Intro error:", e); }
 
 // HEART CANVAS

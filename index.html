@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Wedding Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<audio id="bgMusic" src="music.mp3" loop preload="auto"></audio>
+
+<div id="floatingElements"></div>
+
+<div id="intro">
+  <canvas id="heartCanvas"></canvas>
+  <div class="introText">
+    <h1>Bashid ♥ Dhiya</h1>
+    <p>Weds</p>
+  </div>
+</div>
+
+<div id="app">
+
+  <div class="invitationWrapper">
+
+    <div class="inviteCard">
+
+      <h1 class="coupleName">
+  <span class="nameItalic">Abdul Bashid K</span><br>
+  <span class="wedsText">Weds</span><br>
+  <span class="nameItalic">Dhiya Rasmin K T</span>
+</h1>
+
+      <p class="subText">Together with their families</p>
+
+      <div class="divider"></div>
+
+      <p class="dateText">19 July 2026 • Sunday • 12:00 PM</p>
+      <p class="locationText">Kaippuram Auditorium, Mayliladi Road, Kaippuram</p>
+      <a href="https://maps.app.goo.gl/6GeQmGE322U7eE7m9" target="_blank" class="viewLocationBtn">📍 View Location</a>
+
+      <div class="floral"></div>
+
+      <div class="countdownBox">
+        <div><h2 id="days">00</h2><span>Days</span></div>
+        <div><h2 id="hours">00</h2><span>Hours</span></div>
+        <div><h2 id="mins">00</h2><span>Min</span></div>
+        <div><h2 id="secs">00</h2><span>Sec</span></div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="rsvpSection">
+        <h3 class="rsvpHeading">Will You Attend?</h3>
+        <div class="rsvpButtons">
+          <button class="rsvpBtn rsvpYes" id="rsvpYes">Yes, Insha Allah!</button>
+          <button class="rsvpBtn rsvpNo" id="rsvpNo">Unfortunately, I can't make it</button>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <p class="footerText">We invite you to celebrate our special day</p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div id="celebrationOverlay" class="celebrationOverlay">
+  <canvas id="confettiCanvas"></canvas>
+  <div class="celebrationCard">
+    <div class="celebrationIcon">🎉</div>
+    <h2>Alhamdulillah!</h2>
+    <p>Thank you for confirming. We can't wait to celebrate this beautiful day with you. See you there! 💛</p>
+    <button class="closeCelebration" id="closeCelebration">Close</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
